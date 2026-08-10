@@ -59,6 +59,10 @@ root/
     LeftLeg
     RightLeg
 ```
+
+> [!IMPORTANT]
+> BodyPivot must have its pivot point where the legs and the body connect. On vanilla models, this is at (0, 12, 0).
+
 you'll want to pass in "BodyPivot" as the bodyPivot, instead of the body group itself. this is the main model structure that NKLimbo has been tested with, as it simplifies things significantly, though it should work the same either way.
 
 NKLimbo was designed with vanilla model proportions in mind. not sure how well it'll work outside those proportions, though don't be afraid of trying it. if it works, that's great! if it doesn't, that's unfortunate.
