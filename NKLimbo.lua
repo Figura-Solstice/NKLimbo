@@ -144,9 +144,9 @@ function NKLimbo.presets.niko(parts)
         vel = vel * 0.8 + (new - (old)) * 2
         return new + vel, vel
     end)
-    instance:setArmMode("HANG")
+    instance:setArmMode("OUT")
     instance:setSpeed(.25)
-    instance:setDivisionFactor(vec2(3,1.5))
+    instance:setDivisionFactor(vec2(3,2))
     return instance
 end
 
@@ -250,13 +250,13 @@ function NKLimboInstance:update(headRot)
         t.RightArm.rot = ((-headRot * vec3(1,1/3,1))/self.factor) 
     end
 
-    t.LeftLeg.rot = vec3(headRot.y/7,0,-headRot.y/60)
+    t.LeftLeg.rot = vec3(headRot.y/7,0,-headRot.y/60) / self.factor
     t.LeftLeg.pos = mat4()
         :translate(0,12,0)
         :rotate(t.LeftLeg.rot)
         :translate(0,-12,0)
         :apply()
-    t.RightLeg.rot = vec3(-headRot.y/7,0,-headRot.y/60)
+    t.RightLeg.rot = vec3(-headRot.y/7,0,-headRot.y/60) / self.factor
     t.RightLeg.pos = mat4()
         :translate(0,12,0)
         :rotate(t.RightLeg.rot)
